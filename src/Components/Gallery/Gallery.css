@@ -1,0 +1,38 @@
+.gallery-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+    padding: 3rem 6rem;
+}
+.gallery-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--gallery-font);
+}
+.instagram-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+.instagram-img {
+    cursor: pointer;
+    border-radius: 5px;
+}
+@media (min-width: 992px) {
+    .gallery-page {
+        width: calc(100% - 15.5vw);
+        margin-left: 15.5vw;
+    }
+    .instagram-container {
+        gap: 1vw;
+    }
+    .instagram-img {
+        width: 330px;
+        height: 330px;
+    }
+}

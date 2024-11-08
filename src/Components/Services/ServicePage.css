@@ -87,7 +87,6 @@
 @media (min-width: 992px) {
     .service-page {
         width: calc(100% - 15.5vw);
-        height: 100%;
         margin-left: 15.5vw;
     }
     .service-category {
