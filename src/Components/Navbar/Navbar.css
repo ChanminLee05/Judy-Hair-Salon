@@ -1,0 +1,195 @@
+nav {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+    background: var(--dark-wood) !important;
+}
+.container-fluid {
+    margin: 0 2vw;
+    font-size: 1.3rem;
+    font-family: var(--navbar-font);
+    /*outline: 2px solid red;*/
+}
+.navbar-nav {
+    gap: 0 2vw;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--navbar-color);
+    /*outline: 2px solid red;*/
+}
+.navbar-toggler {
+    filter: invert(1);
+}
+.navbar-toggler-icon {
+    filter: invert(0);
+}
+.logo-img {
+    width: 6rem;
+    height: auto;
+}
+.nav-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    color: var(--navbar-color);
+}
+.nav-link:visited {
+    color: var(--navbar-color);
+}
+.nav-link:hover {
+    color: var(--navbar-list-color);
+}
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item:hover {
+    border-radius: 5px;
+    animation: slideUpDown 1s forwards;
+}
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.instagram-icon {
+    font-size: 1.8rem;
+}
+.navbar-expand-lg .navbar-collapse {
+    height: 17rem;
+    position: relative;
+}
+
+/*Menu*/
+#navbarNav {
+    justify-content: flex-end;
+}
+.lang-options {
+    font-family: var(--basic-font);
+    position: absolute;
+    bottom: 0;
+    left: 79%;
+    transform: translate(-50%,-30%);
+}
+.lang-btn {
+    outline: 1px solid white !important;
+    color: var(--navbar-color);
+    height: 2.5rem;
+    font-size: 1rem;
+}
+.dropdown-item {
+    font-size: 1rem;
+}
+.dropdown-item:hover {
+    border-radius: 5px;
+}
+.option-img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+}
+.dropdown-menu.show {
+    background-color: white;
+    position: absolute;
+    min-width: 8.2rem;
+}
+.nav-address {
+    font-size: 0.9rem;
+    font-family: var(--basic-font);
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    z-index: -1;
+}
+
+
+
+@media (min-width: 992px) {
+    .navbar {
+        width: 15.5vw;
+        height: 100vh;
+        flex-direction: column;
+        background: url("../../Assets/darkwood.PNG") !important;
+        background-size: cover;
+        box-shadow: 10px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .container-fluid {
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 1.5vw;
+        margin: 0;
+        padding: 1vw;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+    .navbar-brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .logo-img {
+        width: 10vw;
+        height: auto;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: flex-start;
+        height: 100%;
+        width: 100%;
+        padding-left: 0.5vw;
+        margin-top: 3vw;
+    }
+    .navbar-nav {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        color: var(--navbar-color);
+    }
+    .nav-item {
+        font-size: 1.8vw;
+    }
+    /*Address*/
+    .nav-address {
+        font-size: 0.9vw;
+        position: absolute;
+        bottom: 4%;
+        left: 58%;
+        transform: translate(-50%,-50%);
+        width: 14vw;
+    }
+    /*Options*/
+    .lang-options {
+        position: absolute;
+        bottom: 1%;
+        left: 31%;
+        transform: translate(-50%,-50%);
+    }
+    .lang-btn {
+        padding: 0 0.5vw;
+        height: 2.3vw;
+        font-size: 0.9vw;
+    }
+    .dropdown-menu.show {
+        min-width: 6.8vw;
+        height: 2.5vw;
+        padding: 0;
+    }
+    .dropdown-item {
+        font-size: 0.9vw;
+    }
+}
