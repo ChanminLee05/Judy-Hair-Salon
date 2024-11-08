@@ -1,13 +1,27 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&family=Oleo+Script:wght@400;700&display=swap');
+
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+  cursor: default;
+  & a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --navbar-font: "Lobster", sans-serif;
+  --cover-text-font: "Great Vibes", cursive;
+  --cover-font: "Oleo Script", system-ui;
+  --logo-color: #2c2c2c;
+  --navbar-color: #f2e6d9;
+  --navbar-list-color: #E3A6A1;
+  --light-wood: #D7B99D;
+  --dark-wood: #83604a;
+  --basic-font: "Arial", sans-serif;
 }
+
+
