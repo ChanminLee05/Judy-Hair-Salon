@@ -39,6 +39,9 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
                             <a className="nav-link" href="/service-detail">Prices</a>
                         </li>
                         <li className="nav-item">
+                            <a className="nav-link" href="#gallery">Gallery</a>
+                        </li>
+                        <li className="nav-item">
                             <a className="nav-link" href="https://examplesite.trafft.com">Book Online</a>
                         </li>
                         <li className="nav-item">
