@@ -1,5 +1,5 @@
 .navbar {
-    background: transparent !important;
+    background: var(--light-wood) !important;
     box-shadow: none;
     transition: background 0.3s, box-shadow 0.3s;
 }
@@ -131,6 +131,7 @@
     .navbar {
         height: 5vw;
         padding: 0 1vw 0 8vw;
+        background: transparent !important;
     }
     .container-fluid {
         font-size: 1.5vw;
