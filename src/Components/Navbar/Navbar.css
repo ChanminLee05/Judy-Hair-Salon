@@ -1,8 +1,11 @@
-nav {
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
 .navbar {
-    background: var(--dark-wood) !important;
+    background: transparent !important;
+    box-shadow: none;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.navbar.scrolled {
+    background: white !important;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .container-fluid {
     margin: 0 2vw;
@@ -17,12 +20,11 @@ nav {
     color: var(--navbar-color);
     /*outline: 2px solid red;*/
 }
-.navbar-toggler {
-    filter: invert(1);
+.navbar-nav.scrolled .nav-link {
+    color: black;
+    transition: color 0.3s ease;
 }
-.navbar-toggler-icon {
-    filter: invert(0);
-}
+
 .logo-img {
     width: 6rem;
     height: auto;
@@ -33,6 +35,7 @@ nav {
     align-items: center;
     width: 100%;
     cursor: pointer;
+    transition: color 0.3s ease;
     color: var(--navbar-color);
 }
 .nav-link:visited {
@@ -65,7 +68,7 @@ nav {
     font-size: 1.8rem;
 }
 .navbar-expand-lg .navbar-collapse {
-    height: 17rem;
+    padding-bottom: 1rem;
     position: relative;
 }
 
@@ -75,16 +78,22 @@ nav {
 }
 .lang-options {
     font-family: var(--basic-font);
-    position: absolute;
-    bottom: 0;
-    left: 79%;
-    transform: translate(-50%,-30%);
+    display: flex;
+    justify-content: flex-end;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*left: 79%;*/
+    /*transform: translate(-50%,-30%);*/
 }
 .lang-btn {
     outline: 1px solid white !important;
     color: var(--navbar-color);
     height: 2.5rem;
     font-size: 1rem;
+}
+.lang-btn.scrolled {
+    outline: none;
+    color: black;
 }
 .dropdown-item {
     font-size: 1rem;
@@ -101,6 +110,9 @@ nav {
     background-color: white;
     position: absolute;
     min-width: 8.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .nav-address {
     font-size: 0.9rem;
@@ -117,67 +129,38 @@ nav {
 
 @media (min-width: 992px) {
     .navbar {
-        width: 15.5vw;
-        height: 100vh;
-        flex-direction: column;
-        background: url("../../Assets/darkwood.PNG") !important;
-        background-size: cover;
-        box-shadow: 10px 0 5px rgba(0, 0, 0, 0.1);
+        height: 5vw;
+        padding: 0 1vw 0 8vw;
     }
     .container-fluid {
-        flex-direction: column;
-        justify-content: flex-start;
         font-size: 1.5vw;
-        margin: 0;
-        padding: 1vw;
         width: 100%;
-        height: 100vh;
-        position: relative;
+        height: 100%;
     }
     .navbar-brand {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
     }
     .logo-img {
-        width: 10vw;
-        height: auto;
+        width: 8vw;
+        height: 4vw;
     }
     .navbar-expand-lg .navbar-collapse {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start !important;
-        align-items: flex-start;
-        height: 100%;
-        width: 100%;
-        padding-left: 0.5vw;
-        margin-top: 3vw;
+        padding-bottom: 0;
     }
     .navbar-nav {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-        color: var(--navbar-color);
+        /*color: var(--navbar-color);*/
+        justify-content: center;
+        align-items: center;
     }
     .nav-item {
         font-size: 1.8vw;
     }
-    /*Address*/
-    .nav-address {
-        font-size: 0.9vw;
-        position: absolute;
-        bottom: 4%;
-        left: 58%;
-        transform: translate(-50%,-50%);
-        width: 14vw;
-    }
+
     /*Options*/
     .lang-options {
-        position: absolute;
-        bottom: 1%;
-        left: 31%;
-        transform: translate(-50%,-50%);
+
     }
     .lang-btn {
         padding: 0 0.5vw;
@@ -185,11 +168,13 @@ nav {
         font-size: 0.9vw;
     }
     .dropdown-menu.show {
-        min-width: 6.8vw;
-        height: 2.5vw;
-        padding: 0;
+        min-width: 7.5vw;
+        height: 2.7vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .dropdown-item {
+    .dropdown-lang {
         font-size: 0.9vw;
     }
 }

@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import "./Gallery.css";
-import Sample1 from "../../Assets/instagram-img1.png";
-import Sample2 from "../../Assets/instagram-img2.png";
-import Sample3 from "../../Assets/instagram-img3.png";
+import Sample1 from "../../Assets/instagram-img2.png";
+import Sample2 from "../../Assets/instagram-img10.png";
+import Sample3 from "../../Assets/instagram-img-cut.png";
 import Sample4 from "../../Assets/instagram-img4.png";
+import Sample5 from "../../Assets/instagram-img5.png";
+import Sample6 from "../../Assets/instagram-img-perm.png";
+import Sample7 from "../../Assets/instagram-img9.png";
+import Sample8 from "../../Assets/instagram-img8.png";
 
 interface Image {
     id: number;
@@ -15,10 +19,10 @@ const images = [
     { id: 2, src: Sample2 },
     { id: 3, src: Sample3 },
     { id: 4, src: Sample4 },
-    { id: 5, src: Sample1 },
-    { id: 6, src: Sample2 },
-    { id: 7, src: Sample3 },
-    { id: 8, src: Sample4 },
+    { id: 5, src: Sample5 },
+    { id: 6, src: Sample6 },
+    { id: 7, src: Sample7 },
+    { id: 8, src: Sample8 },
 ];
 
 const Gallery:React.FC = () => {

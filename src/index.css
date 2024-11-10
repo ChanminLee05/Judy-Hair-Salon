@@ -17,6 +17,9 @@ html, body {
   --cover-text-font: "Great Vibes", cursive;
   --cover-font: "Oleo Script", system-ui;
   --logo-color: #2c2c2c;
+  /*--service-background-color: #121212FF;*/
+  /*--service-background-color: rgb(234,229,214);*/
+  --service-background-color: rgb(234, 215, 211);
   --navbar-color: #f2e6d9;
   --navbar-list-color: #E3A6A1;
   --light-wood: #D7B99D;

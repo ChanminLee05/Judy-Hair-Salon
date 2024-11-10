@@ -1,20 +1,35 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Navbar.css";
 import {HairStudio} from "../Model/HairInfo";
-import Logo from "../../Assets/logo-white.png";
+import Logo from "../../Assets/logo.png";
+import LogoWhite from "../../Assets/logo-white.png";
 import KR from "../../Assets/south-korea.png";
 import US from "../../Assets/united-states.png";
 
 interface NavbarProps {
     data: HairStudio;
+    text: any;
+    selectedLang: "English" | "Korean";
+    handleSelect: (lang: "English" | "Korean") => void;
 }
-const Navbar: React.FC<NavbarProps> = ({ data }) => {
-    const [selectedLang, setSelectedLang] = useState('English');
+const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    function handleSelect(lang: string) {
-        setSelectedLang(lang);
-    }
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     function toggleDropdown() {
         setIsDropdownOpen(prevState => !prevState);
@@ -22,27 +37,30 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
 
 
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <nav className={`navbar navbar-expand-lg ${isScrolled ? 'scrolled' : ''} fixed-top`}>
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                    <img src={Logo} alt="" className="logo-img"/>
+                <a className={`navbar-brand ${isScrolled ? 'scrolled' : ''}`} href="#">
+                    {isScrolled ?
+                        <img src={Logo} alt="" className="logo-img" />
+                        : <img src={LogoWhite} alt="" className="logo-img" />
+                    }
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul className="navbar-nav">
+                    <ul className={`navbar-nav ${isScrolled ? 'scrolled' : ''}`}>
                         <li className="nav-item">
-                            <a className="nav-link" href="#services">Services</a>
+                            <a className="nav-link" href="#services">{text.services.service}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/service-detail">Prices</a>
+                            <a className="nav-link" href="/service-detail">{text.prices}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#gallery">Gallery</a>
+                            <a className="nav-link" href="#gallery">{text.gallery}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="https://examplesite.trafft.com">Book Online</a>
+                            <a className="nav-link" href="https://examplesite.trafft.com">{text.bookOnline}</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="https://www.instagram.com/judyhairsalon/" target="_blank">
@@ -50,47 +68,25 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
                             </a>
                         </li>
                         <li className="lang-options">
-                            <div className="dropdown-center dropup">
-                                {selectedLang === "English" ? (
-                                    <button className="btn lang-btn dropdown-toggle"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded={isDropdownOpen}
-                                            onClick={toggleDropdown}
-                                    >
-                                        <img src={US} alt="" className="option-img"/>English
-                                    </button>
-                                ) : (
-                                    <button className="btn lang-btn dropdown-toggle"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded={isDropdownOpen}
-                                            onClick={toggleDropdown}
-                                    >
-                                        <img src={KR} alt="" className="option-img"/>한국어
-                                    </button>
-                                ) }
+                            <div className="dropdown-center">
+                                <button className={`btn lang-btn dropdown-toggle ${isScrolled ? 'scrolled' : ''}`}
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded={isDropdownOpen}
+                                        onClick={toggleDropdown}
+                                >
+                                    <img src={selectedLang === "English" ? US : KR} alt="" className="option-img"/>
+                                    {selectedLang === "English" ? "English" : "한국어"}
+                                </button>
                                 <ul className="dropdown-menu">
-                                    {selectedLang === "English" ? (
-                                        <li>
-                                            <a className="dropdown-item" href="#" onClick={() => handleSelect('한국어')}>
-                                                <img src={KR} alt="" className="option-img"/>한국어
-                                            </a>
-                                        </li>
-                                    ) : (
-                                        <li>
-                                            <a className="dropdown-item" href="#" onClick={() => handleSelect('English')}>
-                                                <img src={US} alt="" className="option-img"/>English
-                                            </a>
-                                        </li>
-                                    )}
+                                    <li>
+                                        <a className="dropdown-lang" href="#" onClick={() => handleSelect(selectedLang === "English" ? "Korean" : "English")}>
+                                            <img src={selectedLang === "English" ? KR : US} alt="" className="option-img"/>
+                                            {selectedLang === "English" ? "한국어" : "English"}
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
-                        </li>
-                        <li className="nav-address">
-                            <p className="list-info">
-                                {data.address.streetNumber}, {data.address.city}, {data.address.province}, {data.address.zipCode}
-                            </p>
                         </li>
                     </ul>
                 </div>
