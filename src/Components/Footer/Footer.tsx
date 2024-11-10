@@ -8,7 +8,7 @@ interface FooterProps {
 }
 const Footer:React.FC<FooterProps> = ({ info, text }) => {
     return (
-        <div className="footer">
+        <div className="footer" id="footer">
             <div className="footer-left">
                 <div className="footer-operation-container">
                     <h4>{text.hoursOfOperation}</h4>
@@ -26,7 +26,7 @@ const Footer:React.FC<FooterProps> = ({ info, text }) => {
                     <div className="contact-info-container">
                         <div className="contact-info-address">
                             <h6 className="contact-info-label address-label">{text.addressLabel}</h6>
-                            <p className="label-address">{info.address.streetNumber}, {info.address.city}, {info.address.province}, <br />{info.address.zipCode}</p>
+                            <p className="label-address">{info.address.streetNumber}, {info.address.city}, {info.address.province}, {info.address.zipCode}</p>
                         </div>
                         <div className="contact-info-phone">
                             <div className="phone-container">

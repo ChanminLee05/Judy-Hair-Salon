@@ -51,9 +51,9 @@ let data:HairStudio = {
 function App() {
 
 
-  data.services.forEach((service, index) => {
-    console.log(`Service ${index + 1}:`, service);
-  });
+  // data.services.forEach((service, index) => {
+  //   console.log(`Service ${index + 1}:`, service);
+  // });
 
   return (
       <Router>

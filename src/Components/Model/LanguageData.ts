@@ -23,7 +23,6 @@ interface LanguageStrings {
     bookAppointment: string;
     servicesTitle: string;
     services: Services;
-    findUsOnInstagram: string;
     hoursOfOperation: string;
     visitUs: string;
     addressLabel: string;
@@ -68,7 +67,6 @@ const languageData: LanguageData = {
                 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
             },
         },
-        findUsOnInstagram: "Find Us on Instagram",
         hoursOfOperation: "Hours of Operation",
         visitUs: "VISIT US",
         addressLabel: "ADDRESS:",
@@ -106,7 +104,6 @@ const languageData: LanguageData = {
                 description: "로렘 입숨 돌로르 시트 아메트, 콘섹테투어 아디피시싱 엘리트.",
             },
         },
-        findUsOnInstagram: "인스타그램에서 저희를 만나보세요",
         hoursOfOperation: "운영 시간",
         visitUs: "찾아 오시는 길",
         addressLabel: "주소:",

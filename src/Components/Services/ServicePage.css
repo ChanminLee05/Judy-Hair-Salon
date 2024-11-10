@@ -7,14 +7,14 @@
     z-index: 10;
     /*outline: 2px solid red;*/
     background: var(--service-background-color);
-    font-family: var(--navbar-font);
 }
 .service-page h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
-    color: var(--navbar-color);
+    font-family: var(--navbar-font);
+    /*color: var(--navbar-color);*/
 }
 .service-category-container {
     display: flex;
@@ -22,6 +22,7 @@
     align-items: center;
     /*outline: 2px solid red;*/
     flex-wrap: wrap;
+
 }
 .service-category {
     display: flex;
@@ -53,19 +54,18 @@
     font-size: 1rem;
     text-align: center;
     margin-top: 1rem;
-    color: var(--navbar-color);
+    /*color: var(--navbar-color);*/
 }
 .service-category p {
     font-size: 0.6rem;
     text-align: center;
     margin-top: 1rem;
-    color: var(--navbar-color);
+    /*color: var(--navbar-color);*/
 }
 @media (min-width: 992px) {
     .service-page {
-        width: calc(100% - 15.5vw);
-        margin-left: 15.5vw;
         padding: 5vw 2vw;
+        height: 90vh;
     }
     .service-category {
         width: 100%;
