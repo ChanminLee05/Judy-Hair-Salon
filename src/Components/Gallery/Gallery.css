@@ -48,6 +48,9 @@
     height: 380px;
     border-radius: 5px;
 }
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(1);
+}
 
 @media (min-width: 992px) {
     .gallery-page {
@@ -61,8 +64,8 @@
     }
     .offcanvas-body {
         padding: 0 1vw 1vw 1vw;
-        width: 50vw;
-        height: 70vh;
+        width: 40vw;
+        height: 65vh;
         overflow-y: hidden;
     }
     .carousel.slide {

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import {HairStudio} from "./Components/Model/HairInfo";
 import MainPage from "./Components/MainPage";
-import ServiceDetailPage from "./Components/Services/ServiceDetailPage";
+import ServiceDetailPage from "./Components/Price/ServiceDetailPage";
 
 let data:HairStudio = {
   name: 'Judy Hair Studio',

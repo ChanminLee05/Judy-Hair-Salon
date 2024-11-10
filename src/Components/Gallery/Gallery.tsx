@@ -5,6 +5,9 @@ import Sample2 from "../../Assets/instagram-img2.png";
 import Sample3 from "../../Assets/instagram-img3.png";
 import Sample4 from "../../Assets/instagram-img4.png";
 
+interface galleryProps {
+    text: any;
+}
 interface Image {
     id: number;
     src: string;
@@ -21,12 +24,12 @@ const images = [
     { id: 8, src: Sample4 },
 ];
 
-const Gallery:React.FC = () => {
+const Gallery:React.FC<galleryProps> = ({ text }) => {
     const [activeImage, setActiveImage] = useState<Image | null>(null);
 
     return (
         <div className="gallery-page" id="gallery">
-            <h1>Find Us on Instagram</h1>
+            <h1>{text.findUsOnInstagram}</h1>
             <div className="instagram-container">
                 {images.map((image, index) => (
                     <button

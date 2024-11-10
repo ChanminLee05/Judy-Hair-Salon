@@ -7,14 +7,12 @@ import US from "../../Assets/united-states.png";
 
 interface NavbarProps {
     data: HairStudio;
+    text: any;
+    selectedLang: "English" | "Korean";
+    handleSelect: (lang: "English" | "Korean") => void;
 }
-const Navbar: React.FC<NavbarProps> = ({ data }) => {
-    const [selectedLang, setSelectedLang] = useState('English');
+const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    function handleSelect(lang: string) {
-        setSelectedLang(lang);
-    }
 
     function toggleDropdown() {
         setIsDropdownOpen(prevState => !prevState);
@@ -33,16 +31,16 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="#services">Services</a>
+                            <a className="nav-link" href="#services">{text.servicesTitle}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/service-detail">Prices</a>
+                            <a className="nav-link" href="/service-detail">{text.prices}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#gallery">Gallery</a>
+                            <a className="nav-link" href="#gallery">{text.gallery}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="https://examplesite.trafft.com">Book Online</a>
+                            <a className="nav-link" href="https://examplesite.trafft.com">{text.bookOnline}</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="https://www.instagram.com/judyhairsalon/" target="_blank">
@@ -51,39 +49,22 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
                         </li>
                         <li className="lang-options">
                             <div className="dropdown-center dropup">
-                                {selectedLang === "English" ? (
-                                    <button className="btn lang-btn dropdown-toggle"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded={isDropdownOpen}
-                                            onClick={toggleDropdown}
-                                    >
-                                        <img src={US} alt="" className="option-img"/>English
-                                    </button>
-                                ) : (
-                                    <button className="btn lang-btn dropdown-toggle"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded={isDropdownOpen}
-                                            onClick={toggleDropdown}
-                                    >
-                                        <img src={KR} alt="" className="option-img"/>한국어
-                                    </button>
-                                ) }
+                                <button className="btn lang-btn dropdown-toggle"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded={isDropdownOpen}
+                                        onClick={toggleDropdown}
+                                >
+                                    <img src={selectedLang === "English" ? US : KR} alt="" className="option-img"/>
+                                    {selectedLang === "English" ? "English" : "한국어"}
+                                </button>
                                 <ul className="dropdown-menu">
-                                    {selectedLang === "English" ? (
-                                        <li>
-                                            <a className="dropdown-item" href="#" onClick={() => handleSelect('한국어')}>
-                                                <img src={KR} alt="" className="option-img"/>한국어
-                                            </a>
-                                        </li>
-                                    ) : (
-                                        <li>
-                                            <a className="dropdown-item" href="#" onClick={() => handleSelect('English')}>
-                                                <img src={US} alt="" className="option-img"/>English
-                                            </a>
-                                        </li>
-                                    )}
+                                    <li>
+                                        <a className="dropdown-item" href="#" onClick={() => handleSelect(selectedLang === "English" ? "Korean" : "English")}>
+                                            <img src={selectedLang === "English" ? KR : US} alt="" className="option-img"/>
+                                            {selectedLang === "English" ? "한국어" : "English"}
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
