@@ -14,8 +14,8 @@ html, body {
 
 :root {
   --navbar-font: "Lobster", sans-serif;
-  --cover-text-font: "Great Vibes", cursive;
-  --cover-font: "Oleo Script", system-ui;
+  --cover-text-font: "Great Vibes", sans-serif;
+  --cover-font: "Oleo Script", sans-serif;
   --logo-color: #2c2c2c;
   /*--service-background-color: #121212FF;*/
   /*--service-background-color: rgb(234,229,214);*/
@@ -26,7 +26,7 @@ html, body {
   /*--light-wood: #af8e72;*/
   --dark-wood: #83604a;
   --basic-font: "Arial", sans-serif;
-  --gallery-font: "DM Serif Display", serif;
+  --gallery-font: "DM Serif Display", sans-serif;
 }
 
 
