@@ -16,6 +16,7 @@ const MainPage:React.FC<MainPageProps> = ({ info }) => {
     const text = languageData[selectedLang];
 
     const serviceRef = useRef<HTMLDivElement>(null);
+
     const [hasScrolledToService, setHasScrolledToService] = useState(false);
     const [startTouchY, setStartTouchY] = useState(0);
 

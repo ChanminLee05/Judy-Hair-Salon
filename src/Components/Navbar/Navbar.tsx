@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect 
     return (
         <nav className={`navbar navbar-expand-lg ${isScrolled ? 'scrolled' : ''} fixed-top`}>
             <div className="container-fluid">
-                <a className={`navbar-brand ${isScrolled ? 'scrolled' : ''}`} href="#">
+                <a className={`navbar-brand ${isScrolled ? 'scrolled' : ''}`} href="/">
                     {isScrolled ?
                         <img src={Logo} alt="" className="logo-img" />
                         : <img src={LogoWhite} alt="" className="logo-img" />
@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect 
                             <a className="nav-link" href="https://examplesite.trafft.com">{text.bookOnline}</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="https://www.instagram.com/judyhairsalon/" target="_blank">
+                            <a className="nav-link" href="https://www.instagram.com/judyhairsalon/" target="_blank" rel="noreferrer">
                                 <i className="fa-brands fa-instagram instagram-icon"></i>
                             </a>
                         </li>
@@ -80,10 +80,10 @@ const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect 
                                 </button>
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <a className="dropdown-lang" href="#" onClick={() => handleSelect(selectedLang === "English" ? "Korean" : "English")}>
+                                        <button className="dropdown-lang" onClick={() => handleSelect(selectedLang === "English" ? "Korean" : "English")}>
                                             <img src={selectedLang === "English" ? KR : US} alt="" className="option-img"/>
                                             {selectedLang === "English" ? "한국어" : "English"}
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
