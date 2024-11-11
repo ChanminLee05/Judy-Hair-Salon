@@ -1,43 +1,125 @@
 .service-detail-page {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
-.service-detail-page ul {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    list-style: none;
-    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    background: url("../../Assets/price-img.jpg");
+    background-size: cover;
+    min-height: 100vh;
 }
-.service-item {
-    background: #E3A6A1;
-    border-radius: 2px;
+.service-detail-page h1 {
+    margin: 5rem 0 3rem 0;
+    text-transform: uppercase;
+    font-family: var(--gallery-font);
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 2.5rem;
+    color: white;
+}
+.services {
+    width: 100%;
+    border: 1px solid black;
+    background-color: var(--light-wood);
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.1);
+    border-bottom-right-radius: 50px;
+    padding: 1rem;
+    font-family: var(--basic-font);
+}
+.categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+.categories button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1 1 25%;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.categories button:nth-child(4) {
+    margin-left: 1.2rem;
+}
+.categories button:last-child {
+    margin-right: 1.7rem;
+}
+.categories button:hover {
+    text-decoration: underline;
+}
+.categories button:focus {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* List section */
+.service-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex-wrap: wrap;
-    /*padding: 1rem;*/
+    justify-content: center;
+    padding: 0 1rem;
 }
-.service-item ul {
+.service-item {
+    width: 100%;
+}
+.item-top {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-top h6 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+.item-top p {
+    line-height: 5px;
+}
+.service-item p {
+    font-size: 0.8rem;
 }
 @media (min-width: 992px) {
-    .service-detail-page ul {
-        flex-direction: row;
+    .service-detail-page {
+        
+    }
+    .service-detail-page h1 {
+        font-size: 4vw;
+        margin-top: 5vw;
+    }
+    .services {
+        width: 40%;
+        padding: 3vw 1vw;
+    }
+    .categories {
+        margin-bottom: 5vw;
         gap: 1vw;
     }
-    .service-item {
-        height: 50vh;
-        padding: 2vw;
+    .categories button {
+        flex: 1 1 30%;
+        font-size: 1.5vw;
     }
-    .service-item ul {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2vw;
+    .categories button:nth-child(4) {
+        margin-left: 3vw;
+    }
+    .categories button:last-child {
+        margin-right: 3vw;
+    }
+    .service-list {
+        padding: 0 4vw;
+    }
+    .item-top h6 {
+        font-size: 1.2vw;
+    }
+    .service-item p {
+        font-size: 1vw;
     }
 }
 
