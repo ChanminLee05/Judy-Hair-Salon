@@ -24,7 +24,7 @@ const ServicePage:React.FC<ServiceProps> = ({ text }) => {
                     <img src={Color} alt="" className="service-img"/>
                     <div className="service-desc">
                         <h3>{text.services.hairColoring.title}</h3>
-                        <p>{text.services.hairColoring.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html: text.services.hairColoring.description }} />
                     </div>
                 </div>
                 <div className="service-category hair-perm" onClick={goToServiceDetailPage}>

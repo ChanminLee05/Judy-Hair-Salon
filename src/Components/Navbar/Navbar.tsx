@@ -5,6 +5,7 @@ import Logo from "../../Assets/logo.png";
 import LogoWhite from "../../Assets/logo-white.png";
 import KR from "../../Assets/south-korea.png";
 import US from "../../Assets/united-states.png";
+import { useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
     data: HairStudio;
@@ -15,6 +16,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const navigate = useNavigate();
 
     const handleScroll = () => {
         if (window.scrollY > 0) {
@@ -35,6 +37,14 @@ const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect 
         setIsDropdownOpen(prevState => !prevState);
     }
 
+    function goToService() {
+        navigate('/');
+        setTimeout(() => {
+            window.dispatchEvent(new Event("scrollToService"));
+        }, 0);
+    }
+
+
 
     return (
         <nav className={`navbar navbar-expand-lg ${isScrolled ? 'scrolled' : ''} fixed-top`}>
@@ -51,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ data, text, selectedLang, handleSelect 
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className={`navbar-nav ${isScrolled ? 'scrolled' : ''}`}>
                         <li className="nav-item">
-                            <a className="nav-link" href="#services">{text.services.service}</a>
+                            <a className="nav-link" href="#services" onClick={goToService}>{text.services.service}</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/service-detail">{text.prices}</a>

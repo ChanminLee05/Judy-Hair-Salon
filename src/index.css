@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Great+Vibes&family=Lobster&family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 html, body {
   margin: 0;
@@ -10,23 +10,17 @@ html, body {
     text-decoration: none;
     color: black;
   }
+  
 }
 
 :root {
-  --navbar-font: "Lobster", sans-serif;
-  --cover-text-font: "Great Vibes", sans-serif;
-  --cover-font: "Oleo Script", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --title-font: "DM Serif Display", sans-serif;
   --logo-color: #2c2c2c;
-  /*--service-background-color: #121212FF;*/
-  /*--service-background-color: rgb(234,229,214);*/
   --service-background-color: rgb(234, 215, 211);
   --navbar-color: #f2e6d9;
   --navbar-list-color: #E3A6A1;
   --light-wood: #D7B99D;
-  /*--light-wood: #af8e72;*/
-  --dark-wood: #83604a;
-  --basic-font: "Arial", sans-serif;
-  --gallery-font: "DM Serif Display", sans-serif;
 }
 
 
