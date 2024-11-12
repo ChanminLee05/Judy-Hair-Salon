@@ -7,14 +7,14 @@
     justify-content: flex-start;
     align-items: center;
     padding: 2rem;
-    background: url("../../Assets/price-img.jpg");
+    background: url("../../Assets/price-img.jpg") no-repeat center;
     background-size: cover;
     min-height: 100vh;
 }
 .service-detail-page h1 {
     margin: 5rem 0 3rem 0;
     text-transform: uppercase;
-    font-family: var(--gallery-font);
+    font-family: var(--title-font);
     font-weight: bold;
     letter-spacing: 5px;
     font-size: 2.5rem;
@@ -27,7 +27,6 @@
     box-shadow: 10px 10px 5px rgba(0,0,0,0.1);
     border-bottom-right-radius: 50px;
     padding: 1rem;
-    font-family: var(--basic-font);
 }
 .categories {
     display: flex;
