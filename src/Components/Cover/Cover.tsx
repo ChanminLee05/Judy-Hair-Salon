@@ -8,10 +8,9 @@ interface coverProps {
 const Cover:React.FC<coverProps> = ({ text }) => {
     return (
         <div className="cover-page" id="cover-page">
-            <video autoPlay loop muted className="cover-video">
-                <source src={Video} type="video/mp4" />
+            <video autoPlay loop muted playsInline className="cover-video">
+                <source src={Video} type="video/mp4"/>
             </video>
-            {/*<img src={CoverImg1} alt="" className="cover-img"/>*/}
             <div className="cover-txt-container">
                 <h1>Experience K-Beauty</h1>
                 <h3>{text.discoverStyle}</h3>
