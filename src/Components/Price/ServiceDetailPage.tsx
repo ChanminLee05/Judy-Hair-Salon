@@ -21,11 +21,15 @@ const ServiceDetailPage:React.FC<ServiceProps> = ({ info }) => {
         setSelectedLang(lang);
     };
 
+    const getFontFamily = () => {
+        return selectedLang === "Korean" ? "var(--korean-font)" : "var(--title-font)";
+      };
+
     return (
         <div className="service-detail-page">
             <img src={PriceImg} alt='' className='price-image'/>
             <Navbar data={info} text={text} selectedLang={selectedLang} handleSelect={handleSelect}/>
-            <h1>{text.services.service}</h1>
+            <h1 style={{ fontFamily: getFontFamily()}}>{text.services.service}</h1>
             <div className="services">
                 <div className="categories">
                     <button onClick={() => setSelectedCategory('ALL')}>ALL</button>
@@ -40,9 +44,9 @@ const ServiceDetailPage:React.FC<ServiceProps> = ({ info }) => {
                         <div key={index} className="service-item">
                             <div className="item-top">
                                 <h6>{service.subCategory}</h6>
-                                <p>{service.price}</p>
+                                <p>{service.price[selectedLang]}</p>
                             </div>
-                            <p>{service.description}</p>
+                            <p>{service.description[selectedLang]}</p>
                         </div>
                     ))}
                 </div>
