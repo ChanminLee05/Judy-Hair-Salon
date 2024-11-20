@@ -7,9 +7,16 @@
     justify-content: flex-start;
     align-items: center;
     padding: 2rem;
-    background: url("../../Assets/price-img.jpg") no-repeat center;
-    background-size: cover;
     min-height: 100vh;
+    position: relative;
+}
+.price-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 .service-detail-page h1 {
     margin: 5rem 0 3rem 0;

@@ -1,9 +1,9 @@
 .service-page {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     margin-top: 90vh;
-    padding: 2rem 0;
+    padding: 2rem 0 5rem 0;
     z-index: 10;
     /*outline: 2px solid red;*/
     background: var(--service-background-color);
@@ -14,7 +14,6 @@
     align-items: center;
     padding: 1rem 0;
     font-family: var(--title-font);
-    /*color: var(--navbar-color);*/
 }
 .service-category-container {
     display: flex;
@@ -22,7 +21,7 @@
     align-items: center;
     /*outline: 2px solid red;*/
     flex-wrap: wrap;
-
+    font-family: var(--body-font);
 }
 .service-category {
     display: flex;
@@ -30,8 +29,8 @@
     justify-content: flex-start;
     align-items: center;
     max-height: 18rem;
-    /*outline: 2px solid red;*/
-    cursor: pointer;
+    min-height: 19rem;
+    /* outline: 2px solid red; */
     position: relative;
     z-index: 1;
     flex: 1 1 calc(50% - 10px);
@@ -54,18 +53,63 @@
     font-size: 1rem;
     text-align: center;
     margin-top: 1rem;
-    /*color: var(--navbar-color);*/
+    font-family: var(--title-font);
 }
 .service-category p {
     font-size: 0.6rem;
     text-align: center;
     margin-top: 1rem;
-    /*color: var(--navbar-color);*/
 }
+.price-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    font-family: var(--body-font);
+    text-transform: uppercase;
+}
+.price-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -52%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.price-btn i {
+    font-size: 1rem;
+    animation: toRight 1.5s infinite ease-in-out;
+}
+@keyframes toRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 @media (min-width: 992px) {
     .service-page {
-        padding: 5vw 2vw;
-        height: 90vh;
+        padding: 5vw 2vw 7vw 2vw;
+        /* height: 90vh; */
     }
     .service-category {
         width: 100%;
@@ -75,6 +119,8 @@
         flex: 1 1 calc(25% - 50px);
         max-width: calc(25% - 50px);
         max-height: 35vw;
+        min-height: 25vw;
+        /* border: 2px solid red; */
     }
     .service-category h3 {
         font-size: 2vw;
@@ -88,5 +134,13 @@
     }
     .hair-style, .hair-spa {
         margin-top: 0;
+    }
+    .price-btn {
+        width: fit-content;
+        font-size: 2vw;
+        padding: 0.5vw 1.5vw;
+    }
+    .price-btn i {
+        font-size: 1.5vw;
     }
 }

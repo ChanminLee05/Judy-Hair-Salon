@@ -1,18 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./Gallery.css";
-import Sample1 from "../../Assets/instagram-img2.png";
-import Sample2 from "../../Assets/instagram-img10.png";
-import Sample3 from "../../Assets/instagram-img-cut.png";
-import Sample4 from "../../Assets/instagram-img4.png";
-import Sample5 from "../../Assets/instagram-img5.png";
-import Sample6 from "../../Assets/instagram-img-perm.png";
-import Sample7 from "../../Assets/instagram-img9.png";
-import Sample8 from "../../Assets/instagram-img8.png";
-
-interface Image {
-    id: number;
-    src: string;
-}
+import Sample1 from "../../Assets/wtwo.jpeg";
+import Sample2 from "../../Assets/wgrey.jpeg";
+import Sample3 from "../../Assets/wpink.jpeg";
+import Sample4 from "../../Assets/wwine.jpeg";
+import Sample5 from "../../Assets/mperm.jpeg";
+import Sample6 from "../../Assets/wperm.jpeg";
+import Sample7 from "../../Assets/wash.jpeg";
+import Sample8 from "../../Assets/wstyling.jpeg";
 
 const images = [
     { id: 1, src: Sample1 },
@@ -26,61 +21,12 @@ const images = [
 ];
 
 const Gallery:React.FC = () => {
-    const [activeImage, setActiveImage] = useState<Image | null>(null);
-
     return (
         <div className="gallery-page" id="gallery">
             <h1>Find Us on Instagram</h1>
             <div className="instagram-container">
                 {images.map((image, index) => (
-                    <button
-                        key={image.id}
-                        className="btn p-0"
-                        type="button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target={`#offcanvas${image.id}`}
-                        aria-controls={`offcanvas${image.id}`}
-                        onClick={() => setActiveImage(image)}
-                    >
-                        <img className="instagram-img" src={image.src} alt={`instagram-image-${index}`} />
-                    </button>
-                ))}
-
-                {images.map((image, index) => (
-                    <div
-                        key={image.id}
-                        className="offcanvas"
-                        data-bs-scroll="false"
-                        tabIndex={-1}
-                        id={`offcanvas${image.id}`}
-                        aria-labelledby={`offcanvasLabel${image.id}`}
-                    >
-                        <div className="offcanvas-header">
-                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div className="offcanvas-body">
-                            <div id={`carouselExample${image.id}`} className="carousel slide">
-                                <div className="carousel-inner">
-                                    {images.map((carouselImage, carouselIndex) => (
-                                        <div
-                                            key={carouselImage.id}
-                                            className={`carousel-item ${carouselImage.id === image.id ? 'active' : ''}`}
-                                        >
-                                            <img src={carouselImage.src} className="d-block carousel-img" alt={`carousel-image-${carouselIndex}`} />
-                                        </div>
-                                    ))}
-                                </div>
-                                <button className="carousel-control-prev" type="button" data-bs-target={`#carouselExample${image.id}`} data-bs-slide="prev">
-                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span className="visually-hidden">Previous</span>
-                                </button>
-                                <button className="carousel-control-next" type="button" data-bs-target={`#carouselExample${image.id}`} data-bs-slide="next">
-                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span className="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <img src={image.src} alt="" className={`sample-img instagram-img-${index}`} onClick={() => window.location.href="https://www.instagram.com/judyhairsalon/"}/>
                 ))}
             </div>
         </div>

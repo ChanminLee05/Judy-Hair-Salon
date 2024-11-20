@@ -20,28 +20,28 @@ const ServicePage:React.FC<ServiceProps> = ({ text }) => {
         <div className="service-page" id="services">
             <h1>{text.servicesTitle}</h1>
             <div className="service-category-container">
-                <div className="service-category hair-color" onClick={goToServiceDetailPage}>
+                <div className="service-category hair-color">
                     <img src={Color} alt="" className="service-img"/>
                     <div className="service-desc">
                         <h3>{text.services.hairColoring.title}</h3>
                         <p dangerouslySetInnerHTML={{ __html: text.services.hairColoring.description }} />
                     </div>
                 </div>
-                <div className="service-category hair-perm" onClick={goToServiceDetailPage}>
+                <div className="service-category hair-perm">
                     <img src={Perm} alt="" className="service-img"/>
                     <div className="service-desc">
                         <h3>{text.services.hairPerm.title}</h3>
                         <p>{text.services.hairPerm.description}</p>
                     </div>
                 </div>
-                <div className="service-category hair-style" onClick={goToServiceDetailPage}>
+                <div className="service-category hair-style">
                     <img src={Styling} alt="" className="service-img"/>
                     <div className="service-desc">
                         <h3>{text.services.kBeautyStyling.title}</h3>
                         <p>{text.services.kBeautyStyling.description}</p>
                     </div>
                 </div>
-                <div className="service-category hair-spa" onClick={goToServiceDetailPage}>
+                <div className="service-category hair-spa">
                     <img src={Spa} alt="" className="service-img"/>
                     <div className="service-desc">
                         <h3>{text.services.hairSpa.title}</h3>
@@ -49,7 +49,7 @@ const ServicePage:React.FC<ServiceProps> = ({ text }) => {
                     </div>
                 </div>
             </div>
-
+            <button className="price-btn" onClick={goToServiceDetailPage}>More Details<i className="fa-solid fa-chevron-right"></i></button>
         </div>
     );
 };
