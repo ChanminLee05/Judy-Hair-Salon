@@ -40,12 +40,13 @@ const ServiceDetailPage:React.FC<ServiceProps> = ({ info }) => {
                         <div key={index} className="service-item">
                             <div className="item-top">
                                 <h6>{service.subCategory}</h6>
-                                <p>{service.price}</p>
+                                <p>{service.price[selectedLang]}</p>
                             </div>
-                            <p>{service.description}</p>
+                            <p>{service.description[selectedLang]}</p>
                         </div>
                     ))}
                 </div>
+                <p><i className="fa-solid fa-scissors"></i> {text.notice}</p>
             </div>
         </div>
     );
