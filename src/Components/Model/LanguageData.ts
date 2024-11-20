@@ -29,6 +29,7 @@ interface LanguageStrings {
     phoneLabel: string;
     bookNow: string;
     ourLocation: string;
+    notice: string;
 }
 
 type LanguageData = {
@@ -73,6 +74,7 @@ const languageData: LanguageData = {
         phoneLabel: "PHONE:",
         bookNow: "Book Now",
         ourLocation: "Our Location",
+        notice: "With any color service, enjoy a complimentary Olaplex treatment—for healthier, more vibrant hair and your ultimate satisfaction!",
     },
     Korean: {
         prices: "가격",
@@ -110,6 +112,7 @@ const languageData: LanguageData = {
         phoneLabel: "전화번호:",
         bookNow: "예약하기",
         ourLocation: "위치",
+        notice: "모든 염색 시 무료로 제공되는 Olaplex 트리트먼트로 더욱 건강하고 생기 넘치는 머릿결과 최고의 만족을 경험해보세요!",
     },
 }
 
