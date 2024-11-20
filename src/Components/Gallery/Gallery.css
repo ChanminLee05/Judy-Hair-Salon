@@ -4,23 +4,12 @@
     background-color: white;
     position: relative;
     z-index: 10;
-    padding: 1rem;
+    padding: 2rem 1rem;
 }
 .gallery-page h1 {
     text-align: center;
     margin-bottom: 2rem;
-    font-family: var(--gallery-font);
-}
-
-/*Offcanvas*/
-.offcanvas.show {
-    border-radius: 5px;
-    bottom: 15%;
-}
-.offcanvas-body {
-    width: 20rem;
-    height: 25rem;
-    padding: 0 1rem;
+    font-family: var(--title-font);
 }
 .instagram-container {
     display: flex;
@@ -29,63 +18,23 @@
     flex-wrap: wrap;
     gap: 0.5rem;
 }
-.instagram-img {
+.sample-img {
     cursor: pointer;
     border-radius: 5px;
     width: 150px;
     height: 200px;
 }
-.carousel-inner {
-    width: 100%;
-    height: 100%;
-}
-.carousel-item {
-    width: 100%;
-    height: 100%;
-}
-.carousel-img {
-    width: 100%;
-    height: 380px;
-    border-radius: 5px;
-}
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    filter: invert(1);
-}
+
 
 @media (min-width: 992px) {
     .gallery-page {
-        padding: 7vw;
+        padding: 5vw 7vw;
     }
-    /*Offcanvas*/
-    .offcanvas.show {
-        bottom: 20%;
+    .instagram-container {
+        gap: 1vw;
     }
-    .offcanvas-body {
-        padding: 0 1vw 1vw 1vw;
-        width: 40vw;
-        height: 65vh;
-        overflow-y: hidden;
-    }
-
-    .carousel.slide {
-        width: 100%;
-        height: 100%;
-    }
-    .carousel-inner {
-        width: 100%;
-        height: 100%;
-    }
-    .carousel-item {
-        width: 100%;
-        height: 100%;
-    }
-    .carousel-img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .instagram-img {
-        width: 330px;
-        height: 330px;
+    .sample-img {
+        width: 380px;
+        height: 400px;
     }
 }

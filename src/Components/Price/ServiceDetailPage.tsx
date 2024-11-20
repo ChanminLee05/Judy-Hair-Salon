@@ -3,9 +3,11 @@ import {HairStudio} from "../Model/HairInfo";
 import "./ServiceDetailPage.css";
 import Navbar from '../Navbar/Navbar';
 import languageData from '../Model/LanguageData';
+import PriceImg from "../../Assets/price-image1.jpg";
 
 interface ServiceProps {
     info: HairStudio;
+    
 }
 const ServiceDetailPage:React.FC<ServiceProps> = ({ info }) => {
     const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
@@ -21,8 +23,9 @@ const ServiceDetailPage:React.FC<ServiceProps> = ({ info }) => {
 
     return (
         <div className="service-detail-page">
+            <img src={PriceImg} alt='' className='price-image'/>
             <Navbar data={info} text={text} selectedLang={selectedLang} handleSelect={handleSelect}/>
-            <h1>Services</h1>
+            <h1>{text.services.service}</h1>
             <div className="services">
                 <div className="categories">
                     <button onClick={() => setSelectedCategory('ALL')}>ALL</button>
