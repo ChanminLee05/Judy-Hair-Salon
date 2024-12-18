@@ -60,6 +60,12 @@
     text-align: center;
     margin-top: 1rem;
 }
+.price-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+}
 .price-btn {
     display: flex;
     align-items: center;
@@ -70,16 +76,12 @@
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
-    color: black;
-    font-size: 1rem;
+    color: var(--logo-color);
+    font-size: clamp(15px, 2vw, 40px);
     font-weight: bold;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%,-50%);
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     font-family: var(--body-font);
@@ -87,11 +89,10 @@
 }
 .price-btn:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -52%);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 .price-btn i {
-    font-size: 1rem;
+    font-size: clamp(15px, 1.5vw, 30px);
     animation: toRight 1.5s infinite ease-in-out;
 }
 @keyframes toRight {
@@ -108,8 +109,7 @@
 
 @media (min-width: 992px) {
     .service-page {
-        padding: 5vw 2vw 7vw 2vw;
-        /* height: 90vh; */
+        padding: 5vw 2vw;
     }
     .service-category {
         width: 100%;
@@ -120,7 +120,6 @@
         max-width: calc(25% - 50px);
         max-height: 35vw;
         min-height: 25vw;
-        /* border: 2px solid red; */
     }
     .service-category h3 {
         font-size: 2vw;
@@ -137,7 +136,6 @@
     }
     .price-btn {
         width: fit-content;
-        font-size: 2vw;
         padding: 0.5vw 1.5vw;
     }
     .price-btn i {

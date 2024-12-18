@@ -2,10 +2,8 @@ import React from 'react';
 import "./Cover.css";
 // import CoverImg1 from "../../Assets/cover1.png";
 import Video from "../../Assets/cover-video.mp4";
-interface coverProps {
-    text: any;
-}
-const Cover:React.FC<coverProps> = ({ text }) => {
+
+const Cover:React.FC = () => {
     return (
         <div className="cover-page" id="cover-page">
             <video autoPlay loop muted playsInline className="cover-video">
@@ -13,9 +11,9 @@ const Cover:React.FC<coverProps> = ({ text }) => {
             </video>
             <div className="cover-txt-container">
                 <h1>Experience K-Beauty</h1>
-                <h3>{text.discoverStyle}</h3>
-                <p><span>{text.services.color}</span> | <span>{text.services.cut}</span> | <span>{text.services.perm}</span> | <span>{text.services.styling}</span> | <span>{text.services.hairSpa.title}</span></p>
-                <a className="book-link" href="https://examplesite.trafft.com">{text.bookAppointment}</a>
+                <h3>Discover Your Own Style</h3>
+                <p><span>Color</span> | <span>Cut</span> | <span>Perm</span> | <span>Styling</span> | <span>Hair Spa</span></p>
+                <a className="book-link" href="https://examplesite.trafft.com">Book an Appointment</a>
             </div>
         </div>
     );

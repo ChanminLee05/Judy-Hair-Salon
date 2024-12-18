@@ -5,6 +5,7 @@ export type HairStudio = {
     instagram: string;
     services: Service[];
     hours: OperatingHours[];
+    notice: string;
 }
 
 export type Address = {
@@ -29,8 +30,7 @@ type SubCategory = HairCutCategory | HairPermCategory | HairColorCategory | Hair
 export type Service = {
     category: ServiceCategory;
     subCategory: SubCategory;
-    description: {[lang: string]: string};
-    price: {[lang: string]: string};
+    price: string;
 }
 
 export type OperatingHours = {

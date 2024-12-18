@@ -1,5 +1,5 @@
 .navbar {
-    background: var(--light-wood) !important;
+    background: var(--navbar-list-color) !important;
     box-shadow: none;
     transition: background 0.3s, box-shadow 0.3s;
 }
