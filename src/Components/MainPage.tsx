@@ -6,15 +6,11 @@ import "./MainPage.css";
 import Cover from "./Cover/Cover";
 import ServicePage from "./Services/ServicePage";
 import Gallery from "./Gallery/Gallery";
-import languageData from "./Model/LanguageData";
 
 interface MainPageProps {
     info: HairStudio;
 }
 const MainPage:React.FC<MainPageProps> = ({ info }) => {
-    const [selectedLang, setSelectedLang] = useState<"English" | "Korean">("English");
-    const text = languageData[selectedLang];
-
     const serviceRef = useRef<HTMLDivElement>(null);
 
     const [hasScrolledToService, setHasScrolledToService] = useState(false);
@@ -60,17 +56,13 @@ const MainPage:React.FC<MainPageProps> = ({ info }) => {
         };
     }, [hasScrolledToService, startTouchY]);
 
-    const handleSelect = (lang: "English" | "Korean") => {
-        setSelectedLang(lang);
-    };
-
     return (
         <div className="main-page">
-            <Navbar data={info} text={text} selectedLang={selectedLang} handleSelect={handleSelect}/>
-            <Cover text={text} />
-            <div ref={serviceRef}><ServicePage text={text} /></div>
+            <Navbar data={info} />
+            <Cover />
+            <div ref={serviceRef}><ServicePage /></div>
             <Gallery />
-           <Footer info={info} text={text} />
+           <Footer info={info} />
         </div>
     );
 };
