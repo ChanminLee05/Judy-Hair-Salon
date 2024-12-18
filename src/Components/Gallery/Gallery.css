@@ -69,16 +69,16 @@
         padding: 5vw 7vw;
     }
     .instagram-container {
-        grid-template-columns: repeat(auto-fit, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
         grid-template-rows: repeat(7, 120px);
         grid-template-areas: 
-            "   img1    img1    img2    img2    img2    img2    img3    img3    img4    img4    "
-            "   img1    img1    img2    img2    img2    img2    img3    img3    img4    img4    "
-            "   img1    img1    img2    img2    img2    img2    img7    img7    img8    img8    "
-            "   img5    img5    img5    img6    img6    img6    img7    img7    img8    img8    "
-            "   img5    img5    img5    img6    img6    img6    img9    img9    img8    img8    "
-            "   img10    img10    img10    img6    img6    img6    img9    img9    img8    img8    "
-            "   img10    img10    img10    img6    img6    img6    img9    img9    img8    img8    "
+            "   img1    img1    img2    img2    img2    img2    img3    img3    img4    img4    img4    "
+            "   img1    img1    img2    img2    img2    img2    img3    img3    img4    img4    img4    "
+            "   img1    img1    img2    img2    img2    img2    img7    img7    img7    img7    img8    "
+            "   img5    img5    img5    img6    img6    img6    img7    img7    img7    img7    img8    "
+            "   img5    img5    img5    img6    img6    img6    img9    img9    img9    img9    img8    "
+            "   img10    img10    img10    img6    img6    img6    img9    img9    img9    img9   img8  "
+            "   img10    img10    img10    img6    img6    img6    img9    img9    img9    img9   img8  "
             ;
     }
 }

@@ -6,9 +6,9 @@ import Sample3 from "../../Assets/wpink.jpeg";
 import Sample4 from "../../Assets/judy.png";
 import Sample5 from "../../Assets/mperm.jpeg";
 import Sample6 from "../../Assets/wperm.jpeg";
-import Sample7 from "../../Assets/wash.jpeg";
+import Sample7 from "../../Assets/cover1.png";
 import Sample8 from "../../Assets/wstyling.jpeg";
-import Sample9 from "../../Assets/cover1.png";
+import Sample9 from "../../Assets/wash.jpeg";
 import Sample10 from "../../Assets/wwine.jpeg";
 
 const images = [
